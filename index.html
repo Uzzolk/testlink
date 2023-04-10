@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://drive.google.com/uc?id=19zF7Lp7MqgDrp9r0G7yZ6aZnGZ6KDHVj">
+<link rel="icon" href="https://drive.google.com/uc?id=1bld8HIz_sD1gP7SSqVXztw_LvzDgwri4" />
+<link rel="apple-touch-icon" href="https://drive.google.com/uc?id=1g1vTYMn1wyF9ZwF0aHzhnGNicVfYi3E-" />
+<title>private Profile</title>
+
+</head>
+
+<body>
+	<img src="https://drive.google.com/uc?id=1hZPT8-NbFhwZ9yD5sMJrSXNPMSmdv5Dz" alt="Profile Picture">
+	<button onclick="myFunction()">View my profile</button>
+	<p>You will be automatically redirected to my profile</p>
+	<p id="countdown"></p>
+
+ <script>
+   var countdownEl = document.getElementById('countdown');
+  var countdownTime = 1;
+  countdownEl.innerHTML = countdownTime;
+
+  var countdownInterval = setInterval(function() {
+    countdownTime--;
+    countdownEl.innerHTML = countdownTime;
+    if (countdownTime == 0) {
+      clearInterval(countdownInterval);
+      myFunction();
+    }
+  }, 1000);
+	  
+    function myFunction() {
+      var app = "vnd.youtube://youtube.com/redirect?event=comments&redir_token=QUFFLUhqbVBwTlA2ZEJmNVl4WmdiSExORVVYaGRIOC1UUXxBQ3Jtc0trQS1haVB2RlhsTnYwb1dacEZXUERWZTFIcmwzVHFCRXpLZ2lRWmhtV1RFdG1DbzBZZkx6U0VoZUNlV2x3SVlNblNGWjZ4WnVrVXdiOUlpdEphSWJfemFlaG4ybHA4bmJBRUpYejd5b3g5T2JTTnRFbw&q=https%3A%2F%2Fdgmvbk.palatlaldate.com%2F%3Futm_source%3Dda57dc555e50572d%26s1%3D168480%26s2%3D1527353%26s3%3DU%26s5%3DK%26click_id%3Dlive_love%26j5%3D1%26j6%3D1&html_redirect=1";
+	
+      if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        window.location.href = app;
+        window.setTimeout(function() {
+          window.location.href = mobileFallback;
+        }, 25);
+      } else {
+        window.location.href = desktopFallback;
+      }
+	  
+	   function killPopup() {
+        window.removeEventListener('pagehide', killPopup);
+    }
+
+    window.addEventListener('pagehide', killPopup);
+    }
+
+</script>
+</body>
+</html>
